@@ -1,0 +1,634 @@
+[
+  {
+    "nazev": "Pečené koleno",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kotlety na houbách",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Znojemská pečeně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Sekaná",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Moravský vrabec",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Španělský ptáček",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Štěpánská pečeně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí řízek",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Vepřový řízek",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Smažený květák",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Smažený sýr",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Smažené rybí filé",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Bramborák",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Hrách na sladko",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Rýžový nákyp",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Kynuté vdolky",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Čočka na kyselo",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Lečo",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Bramboračka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Zeleninová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Vývar s nudlemi",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Hovězí vývar",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Kuřecí vývar",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Česnečka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Gulášová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Květáková polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Cibulačka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Boršč",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Špenátová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Dýňová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Brokolicová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Čočková polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Gnocchi se sýrem",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Lasagne",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Špagety bolognese",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Špagety carbonara",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Pizza",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Couscous s kuřecím masem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Hovězí steak",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Chilli con carne",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Boloňské lasagne",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Krůtí plátek na žampionech",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Pečená vepřová žebra",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kachní stehno se zelím",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí kung-pao",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Caesar salát",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Těstovinový salát",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Květákový mozeček",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Halušky s uzeným a zelí",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Francouzské brambory",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Hovězí Stroganov",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí s broskví a sýrem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí cordon bleu",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřová játra na cibulce",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Šunkofleky",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Buchtičky se šodó",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Ovocné knedlíky s jahodami",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Fazolové lusky na smetaně",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřové na žampionech",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřová kýta na česneku",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Houbový guláš",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Zelňačka s klobásou",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s krupicovými noky",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Francouzská cibulačka s krutony",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Kuskus s rajčaty",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Domácí hamburger",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Špíz z vepřového masa",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Grilovaná klobása",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Smažená vinná klobása",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Domácí langoš",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Slaný štrůdl",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Svíčková na smetaně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Vepřo knedlo zelo",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Segedínský guláš",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Hovězí guláš",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuře na paprice",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Rajská omáčka s masem",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Zapečené těstoviny",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Špagety aglio olio",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Rizoto s kuřecím masem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Bramborový guláš",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Pečené kuře s bramborem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí kari s rýží",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Zapečené brambory se slaninou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Smažená treska",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Květákové placičky",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Karbanátky",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Vepřové nudličky na pánvi",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Krůtí řízek",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Pečená kachna se zelím",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí steak na pepři",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí nudličky na čínský způsob",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Pečené vepřové koleno",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Hovězí roštěná",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Tortilla s kuřecím masem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí prsa v těstíčku",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Kuřecí plátek s broskví a sýrem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřový steak s pepřovou omáčkou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí medailonky",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí prsa na žampionech",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Pečené vepřové žebírko",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí roláda se špenátem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřová roláda s vajíčkem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Hovězí na červeném víně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Krůtí prsa na grilu",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kachna na pomerančích",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuře pečené na másle",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřový špíz",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí špíz",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřová kýta na paprice",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Vepřové maso na houbách",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí plátek na žampionech",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Smažený hermelín",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Vepřová panenka na grilu",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí stripsy v cornflakes",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Kuřecí čína se zeleninou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Krůtí nudličky se zeleninou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřové maso na žampionech",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Hovězí na houbách",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí plátek se sýrem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Hovězí pečeně na česneku",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí nudličky se smetanou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřové kostky na paprice",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Vepřové maso s mrkví",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Kuřecí plátek na másle",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Bramborové šišky s mákem",
+    "kategorie": "Bezmasá"
+  },
+  {
+    "nazev": "Vepřová kýta na smetaně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Vepřové medailonky",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Smažené žampiony v trojobalu",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Kuřecí řízky v cornflakes",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Grilované kuřecí špízy",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí plátek s bylinkovým máslem",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí steak s grilovanou zeleninou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kuřecí nugetky v cornflakes",
+    "kategorie": "Smažená"
+  },
+  {
+    "nazev": "Kuřecí kousky v těstíčku",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Vepřové kostky na cibuli",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Hovězí maso na smetaně",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Hovězí steak s pepřovou omáčkou",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Kotlety na šlehačce",
+    "kategorie": "Ostatní"
+  },
+  {
+    "nazev": "Frankfurtská polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Hrachová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Fazolová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Rajská polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Kmínová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Kapustová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Krém z brokolice",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Krupicová polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Slepičí vývar",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Zabijačková polévka",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Drůbeží vývar",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s játrovými knedlíčky",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s celestýnskými nudlemi",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s kapáním",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Pho",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s uzeným masem",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Polévka s pórkem",
+    "kategorie": "Polévky"
+  },
+  {
+    "nazev": "Bratislavská",
+    "kategorie": "Omáčky"
+  },
+  {
+    "nazev": "Frankfurtská",
+    "kategorie": "Omáčky"
+  }
+]

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/>
+<title>EasyCook online/offline</title>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #e8f1fa; color: #1c2430; margin: 0; padding: 0; min-height: 100vh;}
+    .container { max-width: 1100px; margin: 34px auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px 0 #2366a210, 0 1px 6px 0 #459cff16; padding: 26px 12px 30px 12px;}
+    .hero-panel { background: linear-gradient(102deg, #d7eefd 70%, #bee4f7 100%); border-radius: 16px; box-shadow: 0 1px 9px 0 #4cbcff22; padding: 25px 10px 15px 10px; margin-bottom: 28px; text-align: center; position: relative;}
+    .talir-emoji { font-size: 3.5em; margin-bottom: 8px; margin-top: 0; display: block; text-align: center; filter: drop-shadow(0 1px 6px #abe8ff40);}
+    h1 { font-size: 2.1em; color: #2070bb; margin-bottom: 0; margin-top: 6px; font-weight: 900; letter-spacing: 0.01em; text-shadow: 0 2px 8px #95d1ff40;}
+    .actions-panel { background: linear-gradient(120deg, #b4d2e4 60%, #7dc6a4 100%); border-radius: 16px; box-shadow: 0 2px 16px 0 #497e9855; padding: 18px 14px 18px 14px; margin-bottom: 30px; display: flex; flex-direction: column; gap: 0;}
+    .main-actions { display: flex; gap: 22px; justify-content: center; align-items: center; margin-bottom: 7px; flex-wrap: wrap;}
+    .btn-db, .btn-add { font-size: 1.13em; font-weight: 600; padding: 13px 26px; border-radius: 36px; border: none; cursor: pointer; transition: background 0.16s, box-shadow 0.14s; box-shadow: 0 2px 12px 0 #459cff24; background: #1663b2; color: #fff; border: 2px solid #1663b2; display: inline-flex; align-items: center; gap: 10px; outline: none;}
+    .btn-db:hover, .btn-db:focus, .btn-add:hover, .btn-add:focus { background: #104070; border-color: #58c6fa;}
+    .gen-row { display: flex; justify-content: center; margin: 18px 0 10px 0;}
+    .btn-gen { font-size: 1.32em; font-weight: bold; padding: 20px 62px; border-radius: 44px; border: none; background: #28a745; color: #fff; box-shadow: 0 4px 24px 0 #43d19e55, 0 1px 8px 0 #33333318; letter-spacing: 0.5px; transition: background 0.18s, box-shadow 0.15s; border: 3px solid #24913c; display: inline-flex; align-items: center; gap: 16px; justify-content: center; min-width: 270px; text-align: center;}
+    .btn-gen:hover, .btn-gen:focus { background: #1c7d31; border-color: #65e09c; box-shadow: 0 6px 26px 0 #28a74555, 0 2px 12px 0 #28a74544; color: #d9ffe9;}
+    .group-backup-row { display: flex; justify-content: flex-start; align-items: center; margin-left: 8px; margin-bottom: 2px; gap: 11px;}
+    .group-backup button, .group-backup label { width: 120px; height: 36px; font-size: 0.99em; border-radius: 18px; border: none; box-shadow: 0 1px 6px #1a78c611; background: #ededf9; color: #3b3b55; border: 2px solid #d6e7f4; font-weight: 500; transition: background 0.15s, color 0.13s, border 0.13s; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0; margin: 0;}
+    .group-backup .btn-backup      { background: #f34f4f; color: #fff; border-color: #f34f4f;}
+    .group-backup .btn-backup:hover, .group-backup .btn-backup:focus { background: #c92121; border-color: #ffbaba; }
+    .group-backup .btn-restore      { background: #54b6fa; color: #fff; border-color: #54b6fa;}
+    .group-backup .btn-restore:hover, .group-backup .btn-restore:focus { background: #1a78c6; color:#fff; border-color:#80d8ff; }
+    .group-backup .btn-txt          { background: #c17cff; color: #fff; border-color: #c17cff;}
+    .group-backup .btn-txt:hover, .group-backup .btn-txt:focus { background: #9347c7; border-color: #e6ccfa; }
+    label.btn-restore { padding: 0; width: 120px; height: 36px; display: flex; align-items: center; justify-content: center;}
+    label input[type="file"] { display: none; }
+    .jidla-table-wrap { border-radius: 17px; background: #fafdff; box-shadow: 0 2px 12px 0 #2196f322; padding: 7px 5px 3px 5px; margin-bottom: 20px; border: 2px solid #dbeeff; overflow-x:auto;}
+    table.jidla-table { width: 100%; border-collapse: separate; border-spacing: 0; background: none; min-width: 375px;}
+    table.jidla-table th { background: #eaf3fa; font-weight: 800; font-size: 1.06em; padding: 10px 8px; border-bottom: 2.5px solid #c4e0fb; text-align: left; letter-spacing: 0.03em;}
+    table.jidla-table td { padding: 8px 7px; border-bottom: 1px solid #e3e9f2; vertical-align: middle; font-size: 1.08em; transition: background 0.13s;}
+    table.jidla-table tbody tr:hover { background: #eaf5ff70; box-shadow: 0 1px 6px #2196f330;}
+    table.jidla-table tr:last-child td { border-bottom: none; }
+    .category-label { display: inline-block; padding: 6px 17px 6px 15px; border-radius: 16px; font-size: 1em; font-weight:600; text-align: center; background: linear-gradient(90deg,#e4f3ff 70%,#fffbe6 100%); color: #1a78c6; border:1.5px solid #95d1ff; margin-right: 6px; box-shadow: 0 2px 8px 0 #b6dfff1a; white-space: nowrap; letter-spacing: 0.02em;}
+    .cat-Bezmasá   { background: linear-gradient(90deg,#c5fad2 70%,#fff 100%); color: #116f24; border:1.5px solid #72dd87;}
+    .cat-Omáčky    { background: linear-gradient(90deg,#d0e7ff 70%,#fff 100%); color: #134a85; border:1.5px solid #8ab7ec;}
+    .cat-Ostatní   { background: linear-gradient(90deg,#ffe7b0 70%,#fff 100%); color: #9c6a09; border:1.5px solid #ffd040;}
+    .cat-Smažená   { background: linear-gradient(90deg,#ffe2f1 70%,#fff 100%); color: #af1590; border:1.5px solid #e49be1;}
+    .cat-Polévky   { background: linear-gradient(90deg,#f5fbc4 70%,#fff 100%); color: #617308; border:1.5px solid #e0ea6a;}
+    .category-label:not([class*='cat-']) { background: #e3e6eb; color: #445; border:1.5px solid #bcc0c9;}
+    .action-btns { display: flex; gap: 7px;}
+    .action-btns button { padding: 6px 15px; font-size: 1em; border-radius: 13px; background: #e7f2ff; color: #2061c3; border: 1.5px solid #8ab7ec; transition: background 0.15s, color 0.13s; cursor: pointer; font-weight: 600; box-shadow: 0 2px 6px #2196f312;}
+    .action-btns button:hover { background: #cbe8ff; color: #1456aa; border-color: #54b6fa;}
+    .action-btns button:last-child { background: #ffe4e6; color: #af2828; border-color: #f9a7a7;}
+    .action-btns button:last-child:hover { background: #ffc9d0; color: #a51b1b; border-color: #fc6e8c;}
+    .table-filters { display: flex; align-items: center; gap: 15px; margin-bottom: 8px; flex-wrap: wrap;}
+    .table-filters label { font-size: 1.09em; font-weight: 600; color: #2462b4; letter-spacing: 0.01em;}
+    .table-filters select { font-size: 1.05em; border-radius: 8px; border: 1px solid #a7cffa; padding: 6px 16px; background: #f4faff;}
+    .table-filters button { margin-left: auto; background: #f0f4fa; color: #3475b9; border: 1.5px solid #afd4f7; padding: 7px 18px; border-radius: 12px; font-weight: 500; transition: background 0.12s, color 0.12s;}
+    .table-filters button:hover { background: #e7f2ff; color: #174176; border-color: #6db4f9;}
+    .menu-block { max-width: 600px; margin: 0 auto 18px auto; background: #eaf3fa; border-radius: 14px; box-shadow: 0 2px 12px 0 #bae3ff22; padding: 14px 12px 10px 14px; border: 2px solid #b4e6ff;}
+    .menu-label { font-weight: bold; margin-bottom: 7px; color: #1960b3; font-size: 1.12em; letter-spacing: 0.02em; text-align: center;}
+    .vysledky-menu { display: flex; flex-direction: column; gap: 18px; }
+    @media (min-width: 600px) {
+      .vysledky-menu { flex-direction: row; justify-content: center; gap: 32px;}
+      .menu-block {min-width: 260px;}
+    }
+    .menu-block ol, .menu-block ul { margin: 0 0 0 19px; padding: 0;}
+    .menu-block li { margin-bottom: 3px; font-size: 1.04em; padding-left: 2px;}
+    @media (max-width:600px) {
+      .container {padding: 4vw 0.5vw;}
+      .main-actions button, .main-actions label { font-size: 1em; padding: 10px 14px; }
+      h1 { font-size: 1.25em;}
+      .hero-panel { padding: 13px 3px 9px 3px; }
+      .actions-panel { padding: 7px 2px 6px 2px; }
+      .btn-gen { min-width: unset; padding: 14px 5vw; font-size: 1em;}
+      .group-backup button, .group-backup label { width: 85px; height: 33px; font-size: 0.93em;}
+      .group-backup-row { margin-left:0; gap:7px;}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="hero-panel">
+<div class="talir-emoji">🍲</div>
+<h1>EasyCook</h1>
+</div>
+<div class="actions-panel">
+<div class="main-actions">
+<button class="btn-db" id="btn-show-database">📋 Databáze jídel</button>
+<button class="btn-add" id="btn-add-new">➕ Přidat nové jídlo</button>
+</div>
+<div class="gen-row">
+<button class="btn-gen" id="btn-generate-menu">🥣 Vymyslet oběd</button>
+</div>
+\
+<div class="group-backup-row">
+<div class="group-backup">
+<button class="btn-backup" id="btn-download-db">📀 Uložit</button>
+<label class="btn-restore" for="file-upload">📼 Vložit<input accept=".json" id="file-upload" type="file"/></label>
+<button class="btn-txt" id="btn-import-txt">📝 Text</button>
+<input accept=".txt" id="txt-upload" style="display:none;" type="file"/>
+</div>
+<div style="margin-left:auto; display:flex; align-items:end; height:36px; padding-right:10px;">
+  <div style="background:#f0f7ff; border:1px solid #a8c8e6; border-radius:10px; padding:3px 10px; box-shadow: 0 2px 6px #a6d3ff55;">
+    <script type="text/javascript">
+    var sc_project=13137078; 
+    var sc_invisible=0; 
+    var sc_security="d35be5ab"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript>
+      <div class="statcounter">
+        <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+          <img class="statcounter" src="https://c.statcounter.com/13137078/0/d35be5ab/0/"
+               alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"
+               style="height:32px; vertical-align:middle;">
+        </a>
+      </div>
+    </noscript>
+  </div>
+</div>
+
+</div>
+</div>
+<div id="main-content"></div>
+</div>
+<script>
+let lastFilterKategorie = '';
+const STORAGE_KEY = 'jidlaDatabaze';
+let jidla = [];
+let lastScrollTop = 0;
+
+// Zde hlavní změna: při prvním načtení ZKUSÍ načíst jidla.json, jinak localStorage
+function inicializujJidla() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  if (data) {
+    try { jidla = JSON.parse(data); } catch { jidla = []; }
+    renderMain();
+  } else {
+    // Zkus stáhnout jidla.json (na webu)
+    fetch('jidla.json')
+      .then(resp => resp.json())
+      .then(json => {
+        jidla = json;
+        saveJidla();
+        renderMain();
+      })
+      .catch(() => {
+        jidla = [];
+        renderMain();
+      });
+  }
+}
+function saveJidla() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(jidla));
+}
+
+function downloadDb() {
+  const data = JSON.stringify(jidla, null, 2);
+  const blob = new Blob([data], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'zaloha_jidla.json';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, 100);
+}
+function importDb(file) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const newData = JSON.parse(e.target.result);
+      if (Array.isArray(newData)) {
+        jidla = newData;
+        saveJidla();
+        msg('Databáze úspěšně načtena.');
+        renderMain();
+      } else {
+        alert('Soubor nemá správný formát!');
+      }
+    } catch {
+      alert('Chyba při načítání souboru!');
+    }
+  };
+  reader.readAsText(file);
+}
+
+document.getElementById('btn-import-txt').onclick = () => {
+  document.getElementById('txt-upload').value = "";
+  document.getElementById('txt-upload').click();
+};
+
+document.getElementById('txt-upload').onchange = function(e) {
+  if (e.target.files && e.target.files[0]) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      let lines = ev.target.result.split(/\r?\n/).map(l=>l.trim()).filter(Boolean);
+      if (!lines.length) { msg('Soubor je prázdný!'); return; }
+      let kategorie = prompt('Zadej kategorii pro importovaná jídla:');
+      if (!kategorie) { msg('Import zrušen.'); return; }
+      let pridano = 0, preskoceno = 0;
+      let existujiciNazvy = new Set(jidla.map(j=>j.nazev.toLowerCase()));
+      for (let nazev of lines) {
+        if (existujiciNazvy.has(nazev.toLowerCase())) { preskoceno++; continue; }
+        jidla.push({ nazev: nazev, kategorie: kategorie });
+        pridano++;
+        existujiciNazvy.add(nazev.toLowerCase());
+      }
+      saveJidla();
+      msg(`Importováno: ${pridano}, přeskočeno: ${preskoceno}`);
+      renderMain();
+    };
+    reader.readAsText(file);
+  }
+};
+
+function getKategorie() {
+  const vse = jidla.map(j => j.kategorie);
+  return Array.from(new Set(vse));
+}
+
+function msg(text) {
+  const div = document.createElement('div');
+  div.className = 'msg';
+  div.innerText = text;
+  document.getElementById('main-content').prepend(div);
+  setTimeout(()=>div.remove(), 2200);
+}
+
+function renderMain() {
+  document.getElementById('main-content').innerHTML = '';
+}
+
+function renderJidlaTable(filter = lastFilterKategorie) {
+  lastFilterKategorie = filter;
+  let jidlaSorted = jidla.slice().sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs', { sensitivity: 'base' }));
+  let html = `
+    <div class="jidla-table-wrap">
+      <div class="table-filters">
+        <label>Kategorie:
+          <select id="filtr-kategorie">
+            <option value="">-- všechny --</option>
+            ${getKategorie().map(cat => `<option value="${cat}">${cat}</option>`).join('')}
+          </select>
+        </label>
+        <button id="btn-close-table">Zavřít</button>
+      </div>
+      <table class="jidla-table">
+        <thead>
+          <tr>
+            <th>Název</th>
+            <th>Kategorie</th>
+            <th>Akce</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${jidlaSorted.map((j, realIdx) =>
+            (!filter || j.kategorie === filter) ? `
+            <tr>
+              <td>${escapeHtml(j.nazev)}</td>
+              <td><span class="category-label cat-${escapeHtml(j.kategorie)}">${escapeHtml(j.kategorie)}</span></td>
+              <td class="action-btns">
+                <button onclick="editJidlo(${jidla.indexOf(j)})">Upravit</button>
+                <button onclick="deleteJidlo(${jidla.indexOf(j)})">Smazat</button>
+              </td>
+            </tr>
+          ` : ''
+          ).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+  document.getElementById('main-content').innerHTML = html;
+  document.getElementById('filtr-kategorie').value = filter;
+  document.getElementById('filtr-kategorie').onchange = function() {
+    renderJidlaTable(this.value);
+  };
+  document.getElementById('btn-close-table').onclick = renderMain;
+}
+
+function escapeHtml(txt) {
+  return (txt ?? '').replace(/[&<>"']/g, function(m) {
+    return ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    })[m];
+  });
+}
+
+window.editJidlo = function(idx) {
+  lastScrollTop = window.scrollY;
+  const j = jidla[idx];
+  const kategorieList = getKategorie();
+  const html = `
+    <h2>Úprava jídla</h2>
+    <form id="edit-form">
+      <label>Název:<br>
+        <input type="text" id="edit-nazev" value="${escapeHtml(j.nazev)}" required>
+      </label><br><br>
+      <label>Kategorie:<br>
+        <select id="edit-kategorie" required>
+          ${kategorieList.map(cat => `<option value="${cat}" ${cat === j.kategorie ? 'selected' : ''}>${cat}</option>`).join('')}
+          <option value="_new_">+ Nová kategorie...</option>
+        </select>
+        <input type="text" id="new-kategorie" placeholder="Zadej novou kategorii" style="display:none; margin-top:6px;" />
+      </label><br><br>
+      <button type="submit">Uložit</button>
+      <button type="button" id="btn-cancel">Zrušit</button>
+    </form>
+  `;
+  document.getElementById('main-content').innerHTML = html;
+
+  const select = document.getElementById('edit-kategorie');
+  const newInput = document.getElementById('new-kategorie');
+  select.onchange = function () {
+    if (this.value === '_new_') {
+      newInput.style.display = 'inline-block';
+      newInput.required = true;
+      newInput.focus();
+    } else {
+      newInput.style.display = 'none';
+      newInput.required = false;
+    }
+  };
+  if (select.value === '_new_') {
+    newInput.style.display = 'inline-block';
+    newInput.required = true;
+    newInput.focus();
+  }
+  document.getElementById('edit-form').onsubmit = function(e) {
+    e.preventDefault();
+    const newNazev = document.getElementById('edit-nazev').value.trim();
+    let kategorie;
+    if (select.value === '_new_') {
+      kategorie = newInput.value.trim();
+      if (!kategorie) {
+        alert("Zadej název nové kategorie.");
+        newInput.focus();
+        return;
+      }
+    } else {
+      kategorie = select.value;
+    }
+    j.nazev = newNazev;
+    j.kategorie = kategorie;
+    saveJidla();
+    msg('Jídlo upraveno.');
+    renderJidlaTable(lastFilterKategorie);
+    setTimeout(() => window.scrollTo(0, lastScrollTop), 0);
+  };
+  document.getElementById('btn-cancel').onclick = () => {
+    renderJidlaTable(lastFilterKategorie);
+    setTimeout(() => window.scrollTo(0, lastScrollTop), 0);
+  };
+};
+
+window.deleteJidlo = function(idx) {
+  if (confirm('Opravdu smazat toto jídlo?')) {
+    jidla.splice(idx, 1);
+    saveJidla();
+    msg('Jídlo smazáno.');
+    renderJidlaTable(lastFilterKategorie);
+    setTimeout(() => window.scrollTo(0, lastScrollTop), 0);
+  }
+}
+
+function renderAddJidlo() {
+  const html = `
+    <h2>Přidat nové jídlo</h2>
+    <form id="add-form">
+      <label>Název:<br>
+        <input type="text" id="add-nazev" required>
+      </label><br><br>
+      <label>Kategorie:<br>
+        <input type="text" id="add-kategorie" required placeholder="Např. Omáčky, Bezmasá...">
+      </label><br><br>
+      <button type="submit">Přidat</button>
+      <button type="button" id="btn-cancel-add">Zrušit</button>
+    </form>
+  `;
+  document.getElementById('main-content').innerHTML = html;
+  document.getElementById('add-form').onsubmit = function(e) {
+    e.preventDefault();
+    jidla.push({
+      nazev: document.getElementById('add-nazev').value.trim(),
+      kategorie: document.getElementById('add-kategorie').value.trim()
+    });
+    saveJidla();
+    msg('Jídlo přidáno.');
+    renderJidlaTable(lastFilterKategorie);
+    setTimeout(() => window.scrollTo(0, lastScrollTop), 0);
+  };
+  document.getElementById('btn-cancel-add').onclick = () => renderMain();
+}
+
+function renderMenuGenerator() {
+  const jidlaBezPolevek = jidla.filter(j => j.kategorie !== 'Polévky');
+  const polevky = jidla.filter(j => j.kategorie === "Polévky");
+
+  let html = `
+    <div class="generator">
+      <h2>Generátor jídelníčku</h2>
+      <div class="gen-controls" style="margin-bottom:20px;">
+        <button class="btn-gen-small" id="btn-gen-menu">Náhodně vybrat 10 jídel a 3 polévky</button>
+      </div>
+      <div id="generator-menu"></div>
+    </div>
+  `;
+  document.getElementById('main-content').innerHTML = html;
+
+  function shuffle(arr) {
+    let a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function vygenerujMenu() {
+    let nahodnaJidla = shuffle(jidlaBezPolevek).slice(0, 10);
+    let nahodnePolevky = shuffle(polevky).slice(0, 3);
+
+    let html = `
+      <div class="vysledky-menu">
+        <div class="menu-block">
+          <div class="menu-label">Polévky (3 náhodné)</div>
+          <ol>
+            ${nahodnePolevky.map(p => `<li>${escapeHtml(p.nazev)}</li>`).join('')}
+          </ol>
+        </div>
+        <div class="menu-block">
+          <div class="menu-label">Hlavní jídla (10 náhodných)</div>
+          <ol>
+            ${nahodnaJidla.map(j =>
+              `<li>${escapeHtml(j.nazev)} <span class="category-label cat-${escapeHtml(j.kategorie)}">${escapeHtml(j.kategorie)}</span></li>`
+            ).join('')}
+          </ol>
+        </div>
+      </div>
+    `;
+    document.getElementById('generator-menu').innerHTML = html;
+  }
+
+  document.getElementById('btn-gen-menu').onclick = vygenerujMenu;
+}
+
+document.getElementById('btn-show-database').onclick = () => renderJidlaTable(lastFilterKategorie);
+document.getElementById('btn-add-new').onclick = () => renderAddJidlo();
+document.getElementById('btn-generate-menu').onclick = () => renderMenuGenerator();
+document.getElementById('btn-download-db').onclick = downloadDb;
+document.getElementById('file-upload').onchange = function(e) {
+  if (e.target.files && e.target.files[0]) {
+    importDb(e.target.files[0]);
+  }
+};
+
+inicializujJidla();
+</script>
+</body>
+</html>
